@@ -1,5 +1,5 @@
 const { Client, GatewayIntentBits, SlashCommandBuilder } = require('discord.js');
-const { token } = require('./config.json');
+const token = process.env.token;  // صح
 
 const client = new Client({
     intents: [GatewayIntentBits.Guilds]
@@ -36,5 +36,6 @@ client.on('interactionCreate', async interaction => {
         }
     }
 });
+
 
 client.login(token);
